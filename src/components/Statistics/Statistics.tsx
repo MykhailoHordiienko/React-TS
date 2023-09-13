@@ -1,4 +1,5 @@
-// { "id": "id-1", "label": ".docx", "percentage": 22 }
+import css from './statistics.module.css';
+import StatisticItem from './StatisticItem';
 
 type StatisticsProps = {
   title?: string;
@@ -7,74 +8,13 @@ type StatisticsProps = {
 
 const Statistics = ({ title, stats }: StatisticsProps) => {
   return (
-    <section
-    // className={statistics}
-    >
-      <h2
-      //   className={title}
-      >
-        {title && title}
-      </h2>
+    <section className={css.statistics}>
+      <h2 className={css.title}>{title && title}</h2>
 
-      <ul
-      //   className={stat-list}
-      >
-        <li
-        // className={item}
-        >
-          <span
-          //   className={label}
-          >
-            .docx
-          </span>
-          <span
-          //   className={percentage}
-          >
-            4%
-          </span>
-        </li>
-        <li
-        // className={item}
-        >
-          <span
-          //   className={label}
-          >
-            .mp3
-          </span>
-          <span
-          //   className={percentage}
-          >
-            14%
-          </span>
-        </li>
-        <li
-        // className={item}
-        >
-          <span
-          //   className={label}
-          >
-            .pdf
-          </span>
-          <span
-          //   className={percentage}
-          >
-            41%
-          </span>
-        </li>
-        <li
-        // className={item}
-        >
-          <span
-          //   className={label}
-          >
-            .mp4
-          </span>
-          <span
-          //   className={percentage}
-          >
-            12%
-          </span>
-        </li>
+      <ul className={css.statList}>
+        {stats.map(({ id, label, percentage }) => (
+          <StatisticItem key={id} label={label} percentage={percentage} />
+        ))}
       </ul>
     </section>
   );

@@ -1,0 +1,14 @@
+.statistics {
+  margin: 24px 0 24px 0;
+  padding: 16px;
+  background-color: lightgrey;
+}
+
+.title {
+  text-align: center;
+  padding: 24px;
+}
+
+.statList {
+  display: flex;
+}
