@@ -1,10 +1,6 @@
 import css from './statistics.module.css';
 import StatisticItem from './StatisticItem';
-
-type StatisticsProps = {
-  title?: string;
-  stats: { id: string; label: string; percentage: number }[];
-};
+import { StatisticsProps } from '../../types';
 
 const Statistics = ({ title, stats }: StatisticsProps) => {
   return (

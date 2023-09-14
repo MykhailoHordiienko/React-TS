@@ -1,16 +1,5 @@
 import css from './profile.module.css';
-
-type ProfileProps = {
-  username: string;
-  tag: string;
-  location: string;
-  avatar: string;
-  stats: {
-    followers: number;
-    views: number;
-    likes: number;
-  };
-};
+import { type ProfileProps } from '../../types.ts';
 
 const Profile = ({
   username,

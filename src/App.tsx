@@ -1,8 +1,10 @@
 import './App.css';
 import user from './json/user.json';
 import data from './json/data.json';
+import friends from './json/friends.json';
 import Profile from './components/Profile/Profile';
 import Statistics from './components/Statistics/Statistics';
+import FriendsList from './components/FriendsList/FriendsList';
 
 function App() {
   console.log(data);
@@ -17,6 +19,7 @@ function App() {
       />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
+      <FriendsList friends={friends} />
     </>
   );
 }
