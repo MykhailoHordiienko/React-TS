@@ -29,3 +29,12 @@ export type FriendsListItemProps = {
   name: string;
   isOnline: boolean;
 };
+
+export type TransactionHistoryProps = {
+  transactions: {
+    id: string;
+    type: string;
+    amount: string;
+    currency: string;
+  }[];
+};
