@@ -4,6 +4,7 @@ import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
 import Header from './components/Header/Header';
 import { OptionStateType } from './types';
 import Statistics from './components/Statistics/Statistics';
+import Contacts from './components/Contacts/Contacts';
 
 function App() {
   const [option, setOption] = useState<OptionStateType>({
@@ -11,6 +12,11 @@ function App() {
     good: 0,
     neutral: 0,
   });
+  const [showContacts, setShowContacts] = useState(false);
+
+  const handleContacts = () => {
+    setShowContacts(prev => !prev);
+  };
 
   const handleOption = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const {
@@ -43,14 +49,29 @@ function App() {
   return (
     <>
       <Header />
-      <section className="container">
-        <h2>Please leave feedback</h2>
-        <FeedbackOptions options={option} handleOption={handleOption} />
-      </section>
-      <section className="container mt-5">
-        <h2>Statistics</h2>
-        <Statistics message={'There is no statistics'} statistic={statistic} />
-      </section>
+      <button
+        type="button"
+        onClick={handleContacts}
+        className="btn btn-outline-primary">
+        Toggle Contacts
+      </button>
+      {showContacts ? (
+        <Contacts />
+      ) : (
+        <>
+          <section className="container">
+            <h2>Please leave feedback</h2>
+            <FeedbackOptions options={option} handleOption={handleOption} />
+          </section>
+          <section className="container mt-5">
+            <h2>Statistics</h2>
+            <Statistics
+              message={'There is no statistics'}
+              statistic={statistic}
+            />
+          </section>
+        </>
+      )}
     </>
   );
 }
