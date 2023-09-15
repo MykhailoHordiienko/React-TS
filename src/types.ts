@@ -12,3 +12,14 @@ export type OptionStateType = {
   good: number;
   neutral: number;
 };
+
+export type StatisticsProps = {
+  message: string;
+  statistic: {
+    total: number;
+    positive: number;
+    bad: number;
+    good: number;
+    neutral: number;
+  };
+};

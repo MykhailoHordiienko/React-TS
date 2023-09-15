@@ -2,7 +2,6 @@ import { FeedbackOptionsProps } from '../../types';
 
 const FeedbackOptions = ({ options, handleOption }: FeedbackOptionsProps) => {
   const names = Object.keys(options);
-  console.log(names);
 
   return (
     <>
